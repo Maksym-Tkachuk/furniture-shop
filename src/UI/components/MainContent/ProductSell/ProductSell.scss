@@ -1,0 +1,71 @@
+@import "../../../../source/objectStyle.scss";
+
+
+.product-sell{
+  background: url("../../../../img/product-For-Sell/pngfind.png") right top no-repeat;
+}
+
+.product-sell__hat {
+  margin-bottom: 38px;
+}
+
+.product-sell__cell {
+  padding: 30px 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 257px;
+  & > div:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  & img {
+    display: inline-block !important;
+  }
+  & .product-sell__price {
+    @include styleText(26, 32, "Montserrat", normal, 700);
+    color: #34383d;
+  }
+  & .product-sell__information {
+    @include styleText(18, 21, "Roboto", normal, 400);
+    color: #34383d;
+    opacity: 0.8;
+  }
+  & .product-sell__rating img:not(:last-child) {
+    margin-right: 11px;
+  }
+  &:hover {
+    & .product-sell__illustration {
+      background: #cda861;
+      cursor: pointer;
+      transition: all 0.5s ease-in 0;
+    }
+    & .button {
+      background: #cda861;
+    }
+  }
+  & .button {
+    background: transparent;
+    padding: 14px 45px;
+  }
+}
+
+.product-sell__illustration {
+  background: #f2f1f1;
+  border-radius: 30px;
+  width: 100%;
+  padding-bottom: 15px;
+  min-height: 149px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  & .product-sell__name {
+    @include styleText(24, 28, "Roboto", normal, 500);
+    color: #34383d;
+  }
+  & .product-sell__picture {
+    top: 0px;
+    position: absolute;
+  }
+}

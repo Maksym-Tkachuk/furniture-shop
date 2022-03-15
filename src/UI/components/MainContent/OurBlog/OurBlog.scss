@@ -1,0 +1,114 @@
+@import "../../../../source/objectStyle.scss";
+
+.our-blog {
+  background: url("../../../../img/our-blog/left.svg") left center no-repeat;
+}
+.our-blog__inner {
+  margin: 160px 0 80px;
+  padding-bottom: 67px;
+  position: relative;
+  background: url("../../../../img/our-blog/right.svg") right top no-repeat;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1036px;
+    height: 604px;
+    left: 120px;
+    bottom: 0;
+    z-index: -1;
+    background: #f5eee1;
+    border-radius: 0px 100px 100px 0px;
+    @media (max-width: 1200px) {
+      left: 0px;
+      right: 10px;
+      bottom: 0;
+      width: 95%;
+    }
+  }
+  @media (max-width: 400px) {
+    background: none;
+  }
+}
+.our-blog__pages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 114px;
+  max-width: 1284px;
+  margin: 0 auto;
+  margin-top: 30px;
+  @media (max-width: 1200px) {
+    grid-gap: 35px;
+  }
+  @media (max-width: 400px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+.our-blog__page {
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  height: 388px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  &:hover {
+    transition: all 0.3s ease-in;
+    filter: drop-shadow(0px 5px 39px rgba(0, 0, 0, 0.29));
+  }
+  & .our-blog__information {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    & > p {
+      @include styleText(20, 23, "Roboto", normal, 500);
+      color: #ffffff;
+      &:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.our-blog__time-comments {
+  & span {
+    @include styleText(14, 16, "Roboto", normal, 500);
+    color: #ffffff;
+    padding: 3px 0 3px 23px;
+  }
+  & span:first-child {
+    margin-right: 18px;
+    background: url("../../../../img/our-blog/calendar.svg") left no-repeat;
+  }
+  & span:last-child {
+    background: url("../../../../img/our-blog/message.svg") left no-repeat;
+  }
+}
+
+.our-blog__name {
+  @include styleText(36, 42, "Roboto", normal, 500);
+  color: #ffffff;
+  margin: 11px 0;
+}
+
+@media (max-width: 400px) {
+  .navigation__button {
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+    & p {
+      @include styleText(15, 21, "Roboto", normal, 500);
+    }
+  }
+  .star-products__cell {
+    width: 295px;
+  }
+  .star-products__picture img {
+    width: 195px;
+  }
+}

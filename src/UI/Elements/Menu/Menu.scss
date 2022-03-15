@@ -1,0 +1,41 @@
+@import "../../../source/objectStyle.scss";
+
+.menu {
+  & * {
+    font-size: 30px;
+    font-family: emoji;
+    color: #fff;
+  }
+}
+
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+  background-color: #74897c !important;
+  border-right: 5px solid #afbd7d;
+}
+
+@media (max-width: 400px) {
+  .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+    width: 100%;
+  }
+}
+
+button {
+  font: optional;
+  cursor: pointer;
+  width: 100%;
+  background: transparent;
+}
+
+.header__logo {
+  font-size: 2.5rem;
+  line-height: 2.875rem;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  background: #34383d;
+  padding: 11px 48px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}

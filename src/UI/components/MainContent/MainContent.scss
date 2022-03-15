@@ -1,0 +1,24 @@
+@import "../../../source/objectStyle.scss";
+@import "../../../source/nullstyle.scss";
+
+.main {
+  flex: 1 1 100%;
+}
+
+.title {
+  @extend %title-style;
+  text-transform: uppercase;
+}
+
+.hat {
+  text-align: center;
+  & .title {
+    margin-bottom: 32px;
+  }
+  & .wishes {
+    @include styleText(22, 26, "Roboto", normal, 500);
+    color: #34383d;
+    opacity: 0.8;
+  }
+}
+

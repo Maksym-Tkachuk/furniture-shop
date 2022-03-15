@@ -1,0 +1,69 @@
+@import "../../../../source/objectStyle.scss";
+
+.about-us {
+  margin-bottom: 160px;
+}
+
+.about-us__content {
+  position: relative;
+  display: flex;
+  padding: 16px;
+  margin: 80px auto 0 auto;
+  align-items: center;
+  max-width: 1600px;
+  background: rgba(221, 181, 107, 0.1) url("../../../../img/about-Us/chair.png")
+    right bottom no-repeat;
+  box-shadow: 0px 14px 44px rgba(0, 0, 0, 0.03);
+  border-radius: 50px;
+  & .about-us__img {
+    @media (max-width: 1200px) {
+      display: none;
+    }
+  }
+  @media (max-width: 1200px) {
+    flex-direction: row-reverse;
+    background: rgba(221, 181, 107, 0.1)
+      url("../../../../img/about-Us/home.png") left/contain no-repeat;
+  }
+  @media (max-width: 850px) {
+    padding: 15px;
+    background: rgba(221, 181, 107, 0.1);
+  }
+}
+
+.about-us__information {
+  max-width: 513px;
+  & > div:last-child {
+    width: 220px;
+  }
+  & .about-us__article {
+    margin-top: 20px;
+    @include styleText(76, 93, "Montserrat", normal, 600);
+    color: #34383d;
+  }
+  & .about-us__text {
+    @include styleText(22, 26, "Roboto", normal, 500);
+    color: #34383d;
+    opacity: 0.8;
+    margin: 39px 0 24px;
+  }
+  @media (max-width: 850px) {
+    max-width: 100%;
+    & .about-us__article {
+      @include styleText(55, 70, "Montserrat", normal, 600);
+    }
+  }
+}
+.about-us__img img {
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  margin: 0 80px 0 70px;
+  @media (max-width: 1200px) {
+    margin: 0;
+  }
+}
+.about-us__item {
+  position: absolute;
+  bottom: -82px;
+  left: -78px;
+  z-index: -1;
+}

@@ -1,0 +1,67 @@
+@import "../../../../source/objectStyle.scss";
+
+.people-says {
+  background: #f5eee1 url("../../../../img/people-seys/bg.svg") center/contain
+    no-repeat;
+  padding: 80px 0;
+}
+
+.people-says__hat {
+  margin-bottom: 92px;
+}
+
+.people-says__messages {
+  display: flex;
+}
+
+.people-says__message {
+  flex: 1 1 33.3%;
+  text-align: center;
+  background: #f8f7f7;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  transition: all 0.3s ease-in;
+  padding: 0px 21px 50px 21px;
+  cursor: pointer;
+  &:hover {
+    transition: all 0.3s ease-in;
+    box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.15);
+  }
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+  & .people-says__text {
+    @include styleText(18, 21, "Roboto", normal, 400);
+    letter-spacing: 0.09em;
+    margin: 50px 0;
+    color: #34383d;
+    opacity: 0.8;
+  }
+  & .people-says__author {
+    & p:first-child {
+      @include styleText(22, 26, "Roboto", normal, 700);
+      margin-bottom: 4px;
+      letter-spacing: 0.09em;
+      color: #000000;
+    }
+    & p:last-child {
+      @include styleText(20, 23, "Roboto", normal, 400);
+      letter-spacing: 0.09em;
+      color: #000000;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .people-says__messages {
+    flex-direction: column;
+  }
+  .people-says__message {
+    margin: 0 0 50px 0 !important;
+  }
+}
+
+.people-says__picture {
+  margin-top: -50px;
+  width: 108px;
+}

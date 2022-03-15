@@ -1,0 +1,88 @@
+@import "../../../../source/objectStyle.scss";
+
+.additional-information {
+  margin: 115px 0 160px;
+  background: url("../../../../img/star-products/leftElem.svg") left 50%
+    no-repeat;
+}
+.additional-information__inner {
+  & > img {
+    margin-bottom: -45px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+.additional-information__row {
+  min-height: 309px;
+  background: rgba(205, 168, 97, 0.19);
+  border-radius: 30px;
+  display: flex;
+  flex: 1 1 1032px;
+  align-items: center;
+  justify-content: center;
+}
+.additional-information__services {
+  display: flex;
+  margin: 0 -94px 0 -94px;
+}
+.additional-information__service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  padding: 0 94px 0 94px;
+  & > img {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .additional-information__services {
+    margin: 0;
+    flex: 1 1 1032px;
+  }
+  .additional-information__service {
+    padding: 0;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .additional-information__inner {
+    & > img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .additional-information__service {
+    flex-direction: column;
+    & > img {
+      margin-right: 0;
+    }
+  }
+}
+@media (max-width: 550px) {
+  .additional-information__row {
+    padding: 40px 0;
+  }
+  .additional-information__services {
+    flex-direction: column;
+  }
+  .additional-information__service {
+    margin-bottom: 15px;
+  }
+}
+
+.additional-information__block {
+  & p:first-child {
+    @include styleText(20, 23, "Roboto", normal, 500);
+    color: #000000;
+    margin-bottom: 8px;
+  }
+  & p:last-child {
+    @include styleText(14, 16, "Roboto", normal, 500);
+    color: #000000;
+  }
+}

@@ -1,0 +1,171 @@
+@import "../../../source/objectStyle.scss";
+
+.header {
+  min-height: 1080px;
+  padding-top: 20px;
+  background: url("../../../img/header/headerBG.jpg") center/cover no-repeat;
+}
+
+.header__hit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .header__hit {
+    flex-direction: column;
+    & .header__contact-information {
+      margin-bottom: 10px;
+    }
+  }
+}
+@media (max-width: 550px) {
+  .header__contact-information {
+    text-align: center;
+    margin-right: 0;
+    & span {
+      display: block;
+      margin-top: 10px;
+    }
+    & .header__phone {
+      margin-right: 0 !important;
+    }
+  }
+  .header__buttons {
+    display: flex;
+    flex-direction: column;
+    & > div {
+      margin-right: 0 !important;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.header__buttons {
+  & div:first-child {
+    margin-right: 20px;
+  }
+  & div {
+    width: 220px;
+  }
+}
+.header__contact-information {
+  margin-right: 15px;
+  @include styleText(22, 26, "Roboto", normal, 500);
+  & .header__phone {
+    padding-left: 40px;
+    background: url("../../../img/header/headphone.svg") left/contain no-repeat;
+    color: #34383d;
+    margin-right: 60px;
+  }
+  & span {
+    color: #34383d;
+    font-style: italic;
+  }
+}
+
+.header__navigation {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  & .header__auxiliary-button {
+    margin-left: auto;
+    cursor: pointer;
+    & img:first-child {
+      margin-right: 50px;
+    }
+  }
+  & .header__logo {
+    margin-right: 45px;
+    @include styleText(40, 46, "Roboto", normal, 400);
+    text-transform: uppercase;
+    background: #34383d;
+    padding: 11px 48px;
+    color: #fff;
+    cursor: pointer;
+    @media (max-width: 550px) {
+      display: none;
+    }
+  }
+}
+
+.header__menu {
+  & > div {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .header__menu {
+    & > div {
+      display: block;
+    }
+    & > ul {
+      display: none;
+    }
+  }
+}
+
+.header__list li {
+  display: inline-block;
+  & a {
+    @include styleText(22, 26, "Roboto", normal, 500);
+    color: #34383d;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+  &:hover a {
+    padding-bottom: 10px;
+    margin-bottom: -10px;
+    opacity: 1;
+    background: url("../../../img/header/border.jpg") bottom no-repeat;
+  }
+}
+
+.header__information {
+  max-width: 660px;
+  margin-top: 191px;
+  & .header__article {
+    @include styleText(76, 93, "Montserrat", normal, 600);
+    color: #34383d;
+    & span {
+      color: #cda861;
+      border-bottom: 3px solid #cda861;
+    }
+  }
+  & .header__text {
+    max-width: 500px;
+    color: #34383d;
+    @include styleText(22, 26, "Roboto", normal, 500);
+    opacity: 0.8;
+    margin: 30px 0 60px;
+  }
+  & > div {
+    width: 220px;
+  }
+}
+
+@media (max-width: 550px) {
+  .header {
+    min-height: auto;
+    padding: 20px 0 40px;
+  }
+  .header__information {
+    margin-top: 30px;
+    & .header__article {
+      @include styleText(60, 70, "Montserrat", normal, 600);
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .header__information {
+    & .header__article {
+      @include styleText(45, 55, "Montserrat", normal, 600);
+    }
+  }
+}

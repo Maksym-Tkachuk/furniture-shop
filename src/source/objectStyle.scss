@@ -1,0 +1,15 @@
+@mixin styleText($fz, $lh, $ff, $fs, $fw) {
+  font-size: ($fz/16) + rem;
+  line-height: ($lh/16) + rem;
+  font-family: $ff, sans-serif;
+  font-style: $fs;
+  font-weight: $fw;
+}
+
+%title-style {
+  @include styleText(30, 36, "Montserrat", normal, 600);
+  border-bottom: 3px solid #cda861;
+  display: inline-block;
+}
+
+
