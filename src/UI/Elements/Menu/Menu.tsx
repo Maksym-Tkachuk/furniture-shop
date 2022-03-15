@@ -6,8 +6,6 @@ import List from "@mui/material/List";
 import { Link } from "react-scroll";
 import ListItem from "@mui/material/ListItem";
 import "./Menu.scss";
-import "../../components/Header/Header.scss"
-
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
@@ -42,19 +40,30 @@ export default function Menu() {
 
   const list = (anchor: Anchor) => (
     <Box
+      style={{ background: "rgb(102, 84, 48)",height:"100%" }}
       sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 400 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-       <div className="header__logo"><Link to="Home">Logo</Link> </div>
+      <div className="header__logo">
+        <Link to="Home">Logo</Link>{" "}
+      </div>
       <List>
-        {menu.map((elem:{ href: string; title: string },index)=>(
-          <Link key={index} className={"menu"}  to={elem.href} spy={true} smooth={true} offset={-100} duration={500}>
-          <button onClick={toggleDrawer(anchor, false)}>
-            <ListItem button>{elem.title}</ListItem>
-          </button>
-        </Link>
+        {menu.map((elem: { href: string; title: string }, index) => (
+          <Link
+            key={index}
+            className={"menu"}
+            to={elem.href}
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+          >
+            <button onClick={toggleDrawer(anchor, false)}>
+              <ListItem button>{elem.title}</ListItem>
+            </button>
+          </Link>
         ))}
       </List>
     </Box>
