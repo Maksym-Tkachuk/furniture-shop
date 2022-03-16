@@ -5,7 +5,7 @@ import Container from "../../Elements/Container";
 import search from "../../../img/header/search.svg";
 import shop from "../../../img/header/shopping-cart.svg";
 import { Link } from "react-scroll";
-import Menu from "../../Elements/Menu/Menu";
+import Menu, { menu } from "../../Elements/Menu/Menu";
 
 const Header: FC = (props) => {
   return (
@@ -28,27 +28,11 @@ const Header: FC = (props) => {
             <div className="header__logo"><Link to="Home">Logo</Link> </div>
             <nav className="header__menu">
               <ul className="header__list">
-                <li>
-                  <Link to="Home" spy={true} smooth={true} offset={-100} duration={500}>Home</Link>
+              {menu.map((elem,index)=>(
+                <li key={index}>
+                  <Link to={elem.href} spy={true} smooth={true} offset={-50} duration={500}>{elem.title}</Link>
                 </li>
-                <li>
-                  <Link to="Shope" spy={true} smooth={true} offset={-100} duration={500}>Shope</Link>
-                </li>
-                <li>
-                  <Link to="Blog" spy={true} smooth={true} offset={-100} duration={500}>Blog</Link>
-                </li>
-                <li>
-                  <Link to="AboutUs" spy={true} smooth={true} offset={-100} duration={500}>About Us</Link>
-                </li>
-                <li>
-                  <Link to="Product" spy={true} smooth={true} offset={-100} duration={500}>Product</Link>
-                </li>
-                <li>
-                  <Link to="Pages" spy={true} smooth={true} offset={-100} duration={500}>Pages</Link>
-                </li>
-                <li>
-                  <Link to="ContactUS" spy={true} smooth={true} offset={50} duration={500}>Contact US</Link>
-                </li>
+              ))}  
               </ul>
               <Menu/>
             </nav>

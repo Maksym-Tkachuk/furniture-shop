@@ -9,20 +9,24 @@ import "./Menu.scss";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
-export default function Menu() {
+
+
+export const menu: Array<{ href: string; title: string }> = [
+  { href: "Home", title: "Home" },
+  { href: "Shope", title: "Shope" },
+  { href: "Blog", title: "Blog" },
+  { href: "AboutUs", title: "About Us" },
+  { href: "Product", title: "Product" },
+  { href: "Pages", title: "Pages" },
+  { href: "ContactUS", title: "Contact US" },
+];
+
+ const Menu:React.FC = () => {
   const [state, setState] = React.useState({
     left: false,
   });
 
-  const menu: Array<{ href: string; title: string }> = [
-    { href: "Home", title: "Home" },
-    { href: "Shope", title: "Shope" },
-    { href: "Blog", title: "Blog" },
-    { href: "AboutUs", title: "About Us" },
-    { href: "Product", title: "Product" },
-    { href: "Pages", title: "Pages" },
-    { href: "ContactUS", title: "Contact US" },
-  ];
+
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
@@ -91,3 +95,5 @@ export default function Menu() {
     </div>
   );
 }
+
+export default Menu

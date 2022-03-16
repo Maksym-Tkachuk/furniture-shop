@@ -10,6 +10,7 @@ import OurBlog from "./OurBlog/OurBlog";
 import PeopleSays from "./PeopleSays/PeopleSays";
 import FeaturedProducts from "./FeaturedProducts/FeaturedProducts";
 import SubscribeUs from "./SubscribeUs/SubscribeUs";
+import { Link } from "react-scroll";
 
 const MainContent: FC = (props) => {
   return (
@@ -20,9 +21,13 @@ const MainContent: FC = (props) => {
       <StarProducts />
       <AdditionalInformation />
       <OurBlog />
-      <PeopleSays/>
-      <FeaturedProducts/>
-      <SubscribeUs/>
+      <PeopleSays />
+      <FeaturedProducts />
+      <SubscribeUs />
+
+      <Link to="Home" spy={true} smooth={true} offset={-100} duration={500}>  
+        <div className="button-top"></div>
+      </Link>
     </main>
   );
 };
