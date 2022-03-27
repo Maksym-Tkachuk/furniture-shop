@@ -1,11 +1,14 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import "./AboutUS.scss";
 import "../MainContent.scss";
 import Button from "../../../Elements/Button/Button";
 import home from "../../../../img/about-Us/home.png";
 import group from "../../../../img/about-Us/Group.png";
+import { ModalContext } from "../../ContentProvider/ContentProvider";
 
 const AboutUS: FC = (props) => {
+
+  const modalParamets = useContext(ModalContext)
   return (
     <section id={'AboutUs'} className="about-us">
       <div className="about-us__content">
@@ -20,7 +23,7 @@ const AboutUS: FC = (props) => {
             simply dummy text of the printing and typesetting industry.d
             typesetting industry.
           </div>
-          <Button text="Shop Now" value={true} />
+          <Button click={()=>modalParamets?.setModal(true)} text="Shop Now" value={true} />
         </div>
         <img src={group} className="about-us__item" alt="group" />
       </div>

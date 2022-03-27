@@ -49,6 +49,7 @@ const ProductSell: FC = (props) => {
 
   const products: Array<CellOfProductType> = [
     {
+      id:1,
       productPicture: CouchCartoon,
       productName: "Couch Cartoon",
       productPrice: 159,
@@ -56,6 +57,7 @@ const ProductSell: FC = (props) => {
       productRating: 4,
     },
     {
+      id:2,
       productPicture: CueroChair,
       productName: "Cuero Chair",
       productPrice: 199,
@@ -63,6 +65,7 @@ const ProductSell: FC = (props) => {
       productRating: 3,
     },
     {
+      id:3,
       productPicture: BedroomBed,
       productName: "Bedroom Bed",
       productPrice: 359,
@@ -70,6 +73,7 @@ const ProductSell: FC = (props) => {
       productRating: 5,
     },
     {
+      id:4,
       productPicture: OutdoorTable,
       productName: "Outdoor Table",
       productPrice: 99,
@@ -77,6 +81,7 @@ const ProductSell: FC = (props) => {
       productRating: 4,
     },
     {
+      id:5,
       productPicture: WoodenDrawer,
       productName: "Wooden Drawer",
       productPrice: 299,
@@ -84,6 +89,7 @@ const ProductSell: FC = (props) => {
       productRating: 3,
     },
     {
+      id:6,
       productPicture: CouchCartoon,
       productName: "Couch Cartoon",
       productPrice: 159,
@@ -105,10 +111,9 @@ const ProductSell: FC = (props) => {
               choices from us.
             </div>
           </div>
-
           <Slider className="product-sell__cells" {...settings}>
             {products.map((elem: CellOfProductType,index) => (
-              <CellOfProduct key={index} {...elem} />
+              <CellOfProduct key={index}  {...elem} />
             ))}
           </Slider>
         </div>

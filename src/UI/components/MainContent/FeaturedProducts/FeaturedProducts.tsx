@@ -12,6 +12,7 @@ import FeaturedProductsCell from "./FeaturedProductsCell";
 
 
 export interface productsType  {
+  id:number,
   img: string;
   name: string;
   text: string;
@@ -27,6 +28,7 @@ const FeaturedProducts: FC = () => {
 
   const products: Array<productsType> = [
     {
+      id:24,
       img: first,
       name: "Wooden Table-Chair",
       price: 1299,
@@ -34,7 +36,7 @@ const FeaturedProducts: FC = () => {
       rating: 3,
       text: "You don’t have and a tablechair. Shop with 40% discount !",
     },
-    {
+    {  id:34,
       img: second,
       name: "Wooden Table-Chair",
       price: 1599,
@@ -43,6 +45,7 @@ const FeaturedProducts: FC = () => {
       text: "You don’t have and a tablechair. Shop with 40% discount !",
     },
     {
+      id:44,
       img: third,
       name: "Wooden Table-Chair",
       price: 1399,
@@ -51,6 +54,7 @@ const FeaturedProducts: FC = () => {
       text: "You don’t have and a tablechair. Shop with 40% discount !",
     },
     {
+      id:54,
       img: fourth,
       name: "Wooden Table-Chair",
       price: 1499,
@@ -59,6 +63,7 @@ const FeaturedProducts: FC = () => {
       text: "You don’t have and a tablechair. Shop with 40% discount !",
     },
     {
+      id:64,
       img: five,
       name: "Wooden Table-Chair",
       price: 1199,
@@ -67,6 +72,7 @@ const FeaturedProducts: FC = () => {
       text: "You don’t have and a tablechair. Shop with 40% discount !",
     },
     {
+      id:84,
       img: sixe,
       name: "Wooden Table-Chair",
       price: 1199,

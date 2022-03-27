@@ -42,16 +42,11 @@ const StarProducts: FC = (props) => {
   };
 
   const products: Array<StarProductCellType> = [
-    { name: "Modern Chair", price: 99.99, rating: 4.7, img: ModernChair },
-    { name: "Antique Chair", price: 299.99, rating: 4.5, img: AntiqueChair },
-    {
-      name: "Magazine Holder",
-      price: 149.99,
-      rating: 5.0,
-      img: MagazineHolder,
-    },
-    { name: "Comfort Chair", price: 599.99, rating: 3.5, img: ComfortChair },
-    { name: "Antique Chair", price: 299.99, rating: 4.5, img: AntiqueChair },
+    {id:11, name: "Modern Chair", price: 99.99, rating: 4.7, img: ModernChair },
+    {id:22, name: "Antique Chair", price: 299.99, rating: 4.5, img: AntiqueChair },
+    {id:33, name: "Magazine Holder",price: 149.99,rating: 5.0,img: MagazineHolder},
+    {id:44, name: "Comfort Chair", price: 599.99, rating: 3.5, img: ComfortChair },
+    {id:55, name: "Antique Chair", price: 299.99, rating: 4.5, img: AntiqueChair },
   ];
 
   return (

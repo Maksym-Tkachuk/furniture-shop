@@ -10,6 +10,8 @@ import pinterest from "../../../img/footer/pinterest.svg";
 import { Link } from "react-scroll";
 
 const Footer: FC = () => {
+
+
   return (
     <footer id={'ContactUS'} className="footer">
       <div className="footer__top">

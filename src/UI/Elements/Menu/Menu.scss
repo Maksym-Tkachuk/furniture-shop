@@ -8,14 +8,10 @@
   }
 }
 
-//  .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
-//   background-color: rgb(102, 84, 48) !important;
-// }
-
 @media (max-width: 400px) {
   .css-1z13ce1 {
     width: 100% !important;
-}
+  }
 }
 
 button {
@@ -34,7 +30,10 @@ button {
   text-transform: uppercase;
   background: #34383d;
   padding: 11px 48px;
-  color: #fff;
+  & > a {
+    color: #fff !important;
+  }
+
   text-align: center;
   cursor: pointer;
 }

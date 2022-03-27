@@ -5,13 +5,34 @@ import "../MainContent.scss";
 import star from "../../../../img/featured-products/star.svg";
 import Button from "../../../Elements/Button/Button";
 import { productsType } from "./FeaturedProducts";
+import { ProductSell } from "../../../../Modules/ProductSell";
+import { useAppDispatch } from "../../../../hooks/redux";
+import {ProductSlice} from "../../../../store/reducers/ProductSlice";
+import { message } from "antd";
 
 const FeaturedProductsCell: FC<productsType> = (props) => {
+
+  const dispatch = useAppDispatch();
+  const { setNewProduct } = ProductSlice.actions;
+
   let rating: Array<number> = [];
 
   for (let i = 0; i < props.rating; i++) {
     rating[i] = i;
   }
+
+  const productCat: ProductSell = {
+    id: props.id,
+    picture: props.img,
+    name: props.name,
+    price: props.price,
+    count: 1,
+  };
+
+  const addProduct = ({ id, picture, name, price, count }: ProductSell) => {
+    dispatch(setNewProduct({ id, picture, name, price, count }));
+    message.success({content:"Товар додан в корзину!",duration:2} );
+  };
 
   return (
     <div className="featured-products__cell">
@@ -32,7 +53,7 @@ const FeaturedProductsCell: FC<productsType> = (props) => {
             ))}
           </div>
         </div>
-        <Button text="Shop Now" value={true} />
+        <Button click={()=>addProduct(productCat)} text="Shop Now" value={true} />
       </div>
     </div>
   );

@@ -3,18 +3,19 @@ import Container from "../../../Elements/Container";
 import "./SubscribeUs.scss";
 import "../MainContent.scss";
 import Button from "../../../Elements/Button/Button";
+import { message } from "antd";
 
 const SubscribeUs: FC = () => {
   const [value, setValue] = useState<string>("");
 
   function checkMistaks() {
     if (!value) {
-      alert("Поле пустое!");
+      message.error({ content: "Поле пустое!", duration: 1 });
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-      alert("Неверно введена почта!");
+      message.error({ content: "Неверно введена почта!", duration: 1 });
     } else {
       setValue("");
-      alert("Успешно отправлено!");
+      message.success({ content: "Успешно отправлено!", duration: 1 });
     }
   }
 
@@ -36,11 +37,7 @@ const SubscribeUs: FC = () => {
                 onChange={(e) => setValue(e.target.value)}
                 value={value}
               />
-              <Button
-                click={ checkMistaks}
-                text="SUBSCRIBE"
-                value={true}
-              />
+              <Button click={checkMistaks} text="SUBSCRIBE" value={true} />
             </form>
           </div>
         </div>

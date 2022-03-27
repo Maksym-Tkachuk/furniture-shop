@@ -72,6 +72,7 @@
   & .header__auxiliary-button {
     margin-left: auto;
     cursor: pointer;
+    display: flex;
     & img:first-child {
       margin-right: 50px;
     }
@@ -82,8 +83,10 @@
     text-transform: uppercase;
     background: #34383d;
     padding: 11px 48px;
-    color: #fff;
     cursor: pointer;
+    & > a{
+      color: #fff !important;
+    }
     @media (max-width: 550px) {
       display: none;
     }
@@ -142,7 +145,7 @@
     color: #34383d;
     @include styleText(22, 26, "Roboto", normal, 500);
     opacity: 0.8;
-    margin: 30px 0 60px;
+    margin: 30px 0 60px !important;
   }
   & > div {
     width: 220px;
@@ -167,5 +170,25 @@
     & .header__article {
       @include styleText(45, 55, "Montserrat", normal, 600);
     }
+  }
+}
+
+.header__shop {
+  position: relative;
+
+  & p {
+    overflow: hidden;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: red;
   }
 }

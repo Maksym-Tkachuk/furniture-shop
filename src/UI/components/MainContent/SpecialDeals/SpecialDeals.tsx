@@ -1,9 +1,10 @@
 import { Progress } from "antd";
-import { FC, useEffect, useState } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import Button from "../../../Elements/Button/Button";
 import Container from "../../../Elements/Container";
 import "./SpecialDeals.scss";
 import "../MainContent.scss";
+import { ModalContext } from "../../ContentProvider/ContentProvider";
 
 type timeType = {
   days: number;
@@ -13,6 +14,9 @@ type timeType = {
 };
 
 const SpecialDeals: FC = () => {
+
+  const modalParamets = useContext(ModalContext)
+
   const [time, setTime] = useState<timeType>({
     days: 365,
     hours: 24,
@@ -83,7 +87,7 @@ const SpecialDeals: FC = () => {
               }
             )}
           </div>
-          <Button text="Shop Now" />
+          <Button click={()=>modalParamets?.setModal(true)} text="Shop Now" />
         </div>
       </Container>
     </section>
