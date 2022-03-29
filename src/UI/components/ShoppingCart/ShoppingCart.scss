@@ -104,6 +104,7 @@
 
 .ShoppingCart__control-panel {
   margin-top: 40px;
+  flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,4 +124,46 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .ShoppingCart {
+    width: 90vw;
+  }
+}
+@media (max-width: 800px) {
+  .ShoppingCart__control-panel {
+    flex-direction: row-reverse;
+  }
+  .ShoppingCart__continue {
+    order: 1;
+  }
+}
+@media (max-width: 600px) {
+  .ShoppingCart__name {
+    flex: 1 1 60%;
+  }
+  .ShoppingCart__products {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .ShoppingCart__control-panel {
+    flex-direction: column;
+    & > div {
+      margin-bottom: 10px;
+    }
+  }
+  .ShoppingCart__name {
+    @include styleText(25, 25, "Montserrat", normal, 500);
+  }
+}
+
+@media (max-width: 400px) {
+  .ShoppingCart__products {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .ShoppingCart__count{
+    margin-top: 10px;
+  }
 }

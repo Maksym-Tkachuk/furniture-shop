@@ -1,5 +1,8 @@
 import { CloseOutlined } from "@mui/icons-material";
 import { FC, useContext, useMemo } from "react";
+import {message} from "antd"
+import { useAppDispatch } from "../../../hooks/redux";
+import { ProductSlice } from "../../../store/reducers/ProductSlice";
 import ModulWindow from "../../Elements/ModalWindow/ModulWindow";
 import { ModalContext } from "../ContentProvider/ContentProvider";
 import "./ShoppingCart.scss";
@@ -9,6 +12,8 @@ import Products from "./Products/Products";
 
 const ShoppingCart: FC = () => {
   const modalParamets = useContext(ModalContext);
+  const dispatch = useAppDispatch();
+  const { clearListProduct } = ProductSlice.actions;
   const product = useAppSelector((state) => state.ProductReducer.product);
 
   let totalPrice = useMemo(() => {
@@ -22,6 +27,13 @@ const ShoppingCart: FC = () => {
     });
     return sum.toFixed(2);
   }, [product]);
+
+
+const issueUpProduct = ()=>{
+  dispatch(clearListProduct());
+  modalParamets?.setModal(false)
+  message.success({ content: "Товар оформлен!", duration: 1 });
+}
 
 
   return (
@@ -43,7 +55,7 @@ const ShoppingCart: FC = () => {
             ˂ Продолжить выбор товаров
           </div>
           <div className="ShoppingCart__total-price">Итого: {totalPrice}$</div>
-          <Button text="Оформить заказ" value={true} />
+          <Button click={issueUpProduct} text="Оформить заказ" value={true} />
         </div>
       </div>
     </ModulWindow>

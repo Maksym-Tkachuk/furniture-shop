@@ -34,7 +34,9 @@ export const ProductSlice = createSlice({
     },
     deleteProduct(state, action: PayloadAction<number>) {
       state.product = [...state.product.filter(elem=>elem.id !== action.payload)]
-      console.log(state.product)
+    },
+    clearListProduct(state) {
+      state.product = []
     },
   },
 });

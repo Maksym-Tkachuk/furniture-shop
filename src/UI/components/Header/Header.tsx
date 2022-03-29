@@ -1,4 +1,4 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useState } from "react";
 import "./Header.scss";
 import Button from "../../Elements/Button/Button";
 import Container from "../../Elements/Container";
@@ -9,10 +9,21 @@ import Menu, { menu } from "../../Elements/Menu/Menu";
 import { ModalContext } from "../ContentProvider/ContentProvider";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import { useAppSelector } from "../../../hooks/redux";
+import Search from "./Search/Search";
+import UserForm from "./UserForm/UserForm";
+
 
 const Header: FC = (props) => {
   const modalParamets = useContext(ModalContext);
   const { product } = useAppSelector((state) => state.ProductReducer);
+
+ const [window,setWindow] = useState<string>("")
+
+
+ function openModal(text:string){
+    modalParamets?.setModal(true);
+    setWindow(text)
+ }
 
   return (
     <header id={"Home"} className="header">
@@ -27,24 +38,18 @@ const Header: FC = (props) => {
             </div>
             <div className="header__buttons">
               <Button text="Currency: USD" />
-              <Button text="My Account" />
+              <Button text="My Account" click={()=>openModal("form")} />
             </div>
           </div>
           <div className="header__navigation">
             <div className="header__logo">
-              <Link to="Home">Logo</Link>{" "}
+              <Link to="Home">Logo</Link>
             </div>
             <nav className="header__menu">
               <ul className="header__list">
                 {menu.map((elem, index) => (
                   <li key={index}>
-                    <Link
-                      to={elem.href}
-                      spy={true}
-                      smooth={true}
-                      offset={-50}
-                      duration={500}
-                    >
+                    <Link   to={elem.href} spy={true}  smooth={true}  offset={-50} duration={500}>
                       {elem.title}
                     </Link>
                   </li>
@@ -53,11 +58,11 @@ const Header: FC = (props) => {
               <Menu />
             </nav>
             <div className="header__auxiliary-button">
-              <img src={search} alt="search" />
+              <img   onClick={() =>openModal("")} src={search} alt="search" />
               <div className="header__shop">
                 {product.length == 0 || <p>{product.length}</p>}
                 <img
-                  onClick={() => modalParamets?.setModal(true)}
+                  onClick={() =>openModal("cat")}
                   id={"Shope"}
                   src={shop}
                   alt="search"
@@ -77,9 +82,14 @@ const Header: FC = (props) => {
           </div>
         </div>
       </Container>
-      <ShoppingCart />
+      {window=="cat"&&<ShoppingCart />} 
+     {window==""&&<Search/>} 
+     {window=="form" && <UserForm/>}
     </header>
   );
 };
 
 export default Header;
+
+
+

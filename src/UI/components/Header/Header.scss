@@ -73,7 +73,7 @@
     margin-left: auto;
     cursor: pointer;
     display: flex;
-    & img:first-child {
+    & > img{
       margin-right: 50px;
     }
   }

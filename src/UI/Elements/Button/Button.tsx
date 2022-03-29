@@ -13,6 +13,7 @@ const Button: FC<ButtonType> = (props) => {
   return (
     <div className={`${props.value && "other" } button`} onClick={props.click}>
       <p className="button__text">{props.text}</p>
+      {props.children}
     </div>
   );
 };
