@@ -17,12 +17,12 @@ const Header: FC = (props) => {
   const modalParamets = useContext(ModalContext);
   const { product } = useAppSelector((state) => state.ProductReducer);
 
- const [window,setWindow] = useState<string>("")
+ 
 
 
  function openModal(text:string){
     modalParamets?.setModal(true);
-    setWindow(text)
+    modalParamets?.setWindow(text)
  }
 
   return (
@@ -78,13 +78,13 @@ const Header: FC = (props) => {
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </p>
-            <Button click={()=>modalParamets?.setModal(true)} text="Shop Now" />
+            <Button click={()=>{modalParamets?.setModal(true); modalParamets?.setWindow("cat")} } text="Shop Now" />
           </div>
         </div>
       </Container>
-      {window=="cat"&&<ShoppingCart />} 
-     {window==""&&<Search/>} 
-     {window=="form" && <UserForm/>}
+      {modalParamets?.window=="cat"&&<ShoppingCart />} 
+     {modalParamets?.window==""&&<Search/>} 
+     {modalParamets?.window=="form" && <UserForm/>}
     </header>
   );
 };

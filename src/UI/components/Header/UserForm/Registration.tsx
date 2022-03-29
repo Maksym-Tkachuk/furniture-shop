@@ -65,9 +65,9 @@ const Registration: FC<RegistrationType> = (props) => {
               {errors.password && touched.password && errors.password}
             </span>
             <button type="submit"  disabled={isSubmitting} >
-              <Button click={() => props.setForm("login")} value={true} text=" Регистрация" />
+              <Button  value={true} text=" Регистрация" />
             </button>
-            <Button value={true} text="Войти" />
+            <Button click={() => props.setForm("login")} value={true} text="Войти" />
           </form>
         )}
       </Formik>

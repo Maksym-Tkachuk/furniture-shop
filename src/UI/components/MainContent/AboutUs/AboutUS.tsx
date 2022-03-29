@@ -23,7 +23,7 @@ const AboutUS: FC = (props) => {
             simply dummy text of the printing and typesetting industry.d
             typesetting industry.
           </div>
-          <Button click={()=>modalParamets?.setModal(true)} text="Shop Now" value={true} />
+          <Button click={()=>{modalParamets?.setModal(true); modalParamets?.setWindow("cat")}} text="Shop Now" value={true} />
         </div>
         <img src={group} className="about-us__item" alt="group" />
       </div>

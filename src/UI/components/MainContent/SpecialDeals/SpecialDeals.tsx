@@ -87,7 +87,7 @@ const SpecialDeals: FC = () => {
               }
             )}
           </div>
-          <Button click={()=>modalParamets?.setModal(true)} text="Shop Now" />
+          <Button click={()=>{modalParamets?.setModal(true); modalParamets?.setWindow("cat")}} text="Shop Now" />
         </div>
       </Container>
     </section>
