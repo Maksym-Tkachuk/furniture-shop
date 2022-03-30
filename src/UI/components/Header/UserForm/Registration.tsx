@@ -49,6 +49,7 @@ const Registration: FC<RegistrationType> = (props) => {
             <input
               type="email"
               name="email"
+              placeholder="email"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.email}
@@ -57,6 +58,7 @@ const Registration: FC<RegistrationType> = (props) => {
             <input
               type="password"
               name="password"
+              placeholder="password"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.password}
@@ -64,10 +66,14 @@ const Registration: FC<RegistrationType> = (props) => {
             <span>
               {errors.password && touched.password && errors.password}
             </span>
-            <button type="submit"  disabled={isSubmitting} >
-              <Button  value={true} text=" Регистрация" />
+            <button type="submit" disabled={isSubmitting}>
+              <Button value={true} text=" Регистрация" />
             </button>
-            <Button click={() => props.setForm("login")} value={true} text="Войти" />
+            <Button
+              click={() => props.setForm("login")}
+              value={true}
+              text="Войти"
+            />
           </form>
         )}
       </Formik>

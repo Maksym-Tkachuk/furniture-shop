@@ -52,6 +52,7 @@ const Login: FC<LoginType> = (props) => {
                 <input
                   type="email"
                   name="email"
+                  placeholder="email"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.email}
@@ -60,6 +61,7 @@ const Login: FC<LoginType> = (props) => {
                 <input
                   type="password"
                   name="password"
+                  placeholder="password"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
