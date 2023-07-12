@@ -2,6 +2,7 @@
   "name": "furniture-shop",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gitname.github.io/react-gh-pages",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
@@ -36,8 +37,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start-react": "react-scripts  start",
-    "start": "node server.js",
+    "start": "react-scripts  start",
+    "prod": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -62,6 +66,7 @@
   },
   "devDependencies": {
     "@types/react-scroll": "^1.8.3",
-    "@types/react-slick": "^0.23.8"
+    "@types/react-slick": "^0.23.8",
+    "gh-pages": "^5.0.0"
   }
 }
