@@ -2,7 +2,7 @@
   "name": "furniture-shop",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gitname.github.io/react-gh-pages",
+  "homepage": "https://maksym-tkachuk.github.io/furniture-shop",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
